@@ -1,7 +1,7 @@
 #include<iostream>
 #include<bits/stdc++.h>
 using namespace std;
-const mySize = 10e6;
+const int mySize = 10e6;
 int nums[mySize];
 long long myNums1[mySize];
 long long myNums2[mySize];
