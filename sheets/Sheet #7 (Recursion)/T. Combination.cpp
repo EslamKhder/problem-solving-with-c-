@@ -1,23 +1,24 @@
-#define _CRT_SECURE_NO_WARNINGS
 #include<bits/stdc++.h>
-#include <stdio.h>
-#define ll long long
 using namespace std;
-ll fac(ll n, ll r) {
-    ll res = 1; ll temp = 2;
-    for (ll i = r + 1; i <= n; i++) {
-        res *= i; 
-        if (temp <= n - r && res % temp == 0) {
-            res /= temp; temp++;
-        }
-    }
-    return res;
+long long fac(long long num1,long long num2){ // 3
+	long long res=1;
+	long long temp = 2;
+	for(int i= num2+1;i<=num1;i++){
+		res*=i;
+		if(temp <= num1-num2 && res % temp == 0){
+			res/=temp;
+			temp++;
+		}
+	}
+	return res;
 }
 int main()
-{ 
-        ll n, r;
-        cin >> n >> r;
-        if (r > n)cout << 0;
-        else cout << fac(n, r);
- 
+{
+	int num1,num2;
+	cin>>num1>>num2;
+	if(num2 > num1){
+		cout<<0<<endl;
+	} else {
+		cout<<fac(num1,num2);
+	}
 }
