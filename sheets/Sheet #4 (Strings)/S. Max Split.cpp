@@ -2,7 +2,7 @@
 using namespace std;
 int main ()
 {
-	char arr[1000][1000];
+	char arr[1000][1000]={'a'};
 	string value;// LLRRLLLRRR
 	cin>>value;
 	int row=0,column=0,r=0,l=0,counter=0;
