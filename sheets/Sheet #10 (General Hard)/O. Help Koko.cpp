@@ -1,44 +1,46 @@
 #include<bits/stdc++.h>
 using namespace std;
-bool isPrime(long long n)
+bool isPrime(long long n) // 11     2 ------> sqrt(11)
 {
-    // Corner case
-    if (n <= 1)
-        return false;
- 
-    // Check from 2 to square root of n
+	if(n <= 1){ //
+		return 0;
+	}
     for (int i = 2; i <= sqrt(n); i++)
         if (n % i == 0)
             return false;
  
     return true;
 }
- 
+ /*
+ 3 2
+1 4 3
+2 2 1
+*/
 int main(){
-	long long size,aus;
-	long long res;
-	cin>>size>>aus;
-	long long arr[size];
+	int size,x,opr,res=0;
+	cin>>size>>x;
+	int arr[size];
 	for(int i=0;i<size;i++){
 		cin>>arr[i];
 	}
-	long long num;
 	for(int i=0;i<size;i++){
-		long long flag = 0;
-		cin>>num;
-		if(num == 1){
+		cin>>opr;
+		if(opr == 1){
 			if(isPrime(arr[i]) == 1){
-				res = pow(15,aus) * arr[i];
+				/*res = pow(5,x) * pow(3,x);
+				cout<<res%10<<" ";  // 247 % 10 = 7   */ 
+				if(arr[i] % 2 == 0){  // 3% 2 == 0
+					cout<<0<<" ";
+				} else {
+					cout<<5<<" "; // 5
+				}
 			} else {
-				cout<<-1<<endl;
-				flag = 1;
+				cout<<-1<<" ";
 			}
 		} else {
-			res = pow(10,aus) * arr[i];
+			/*res = pow(2,x) * pow(5,x);
+			cout<<res%10<<" ";  //*/
+			cout<<0<<" ";
 		}
-		if(flag == 0){
-			cout<<res %10<<" ";
-		}
-		
 	}
 }
